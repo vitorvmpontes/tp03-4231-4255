@@ -1,3 +1,21 @@
+/*
+Bubble Sort:
+
+- Compara pares de elementos adjacentes e os troca de lugar se estiverem na ordem errada.
+
+- Esse processo se repete até que mais nenhuma troca seja necessária ( elementos já ordenados ).
+
+- No final de cada iteração, o maior valor do conjunto atual de itens é jogado pro final, estando assim, ordenado.
+
+  -> PERFORMANCE:
+	- Melhor Caso: O(N)
+	- Pior caso: O(N^2)
+	- Não recomendado para grandes conjutnso de dados
+
+
+Referencia: SILVA, André Backes. Linguagem C: Completa e Descomplicada. São Paulo: Editora XYZ, 2023.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #define TAM_VETOR 10
