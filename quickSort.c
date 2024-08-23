@@ -1,8 +1,9 @@
 //Referencia: SILVA, André Backes. Linguagem C: Completa e Descomplicada. São Paulo: Editora XYZ, 2023.
-
+#include "randomArray.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#define ARRAY_SIZE 1000
 
 void printfVet(int *V  , int N){
     int i;
@@ -32,7 +33,6 @@ int particiona(int *V, int inicio, int final ){
     }
     V[inicio] = V[dir];
     V[dir] = pivo;
-    printf("---------------\n");
     return dir;
 }
 
@@ -46,17 +46,18 @@ void quickSort(int *V, int inicio, int fim) {
 }
 
 int main(){
-    int vet[7] = {23,4,67,-8,90,54,21};
-    int N = 7;
+    int vet[ARRAY_SIZE];
+    
+    generateRandomValues(vet,ARRAY_SIZE);
 
     printf("Vetor desordenado:\n");
-    printfVet(vet,N);
+    printfVet(vet,ARRAY_SIZE);
    
 
-    quickSort(vet,0,N-1);
+    quickSort(vet,0,ARRAY_SIZE-1);
 
     printf("Vetor Ordenado:\n");
-    printfVet(vet,N);
+    printfVet(vet,ARRAY_SIZE);
 
     system("pause");
     return 0;
