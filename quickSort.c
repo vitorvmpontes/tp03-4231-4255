@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define ARRAY_SIZE 1000
+#define ARRAY_SIZE 10000
 
 void printfVet(int *V  , int N){
     int i;

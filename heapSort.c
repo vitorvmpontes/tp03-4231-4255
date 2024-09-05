@@ -1,8 +1,9 @@
 //Referencia: SILVA, André Backes. Linguagem C: Completa e Descomplicada. São Paulo: Editora XYZ, 2023.
-
+#define ARRAY_SIZE 10000
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "randomArray.h"
 
 void printfVet(int *V  , int N){
     int i;
@@ -47,21 +48,21 @@ void heapSort(int *vet, int N){
 
 int main(){
 
-    
-    int vet[7] = {23,4,67,-8,90,54,21};
-    //int vet[7] = {1,2,3,4,5,6,7};
-    int N = 7;
+    int vet[ARRAY_SIZE];
+    generateRandomValues(vet,ARRAY_SIZE);
 
+   
     printf("Vetor desordenado:\n");
-    printfVet(vet,N);
+    printfVet(vet,ARRAY_SIZE);
  
 
-    heapSort(vet,N);
+    heapSort(vet,ARRAY_SIZE);
 
 
    printf("Vetor Ordenado:\n");
-    printfVet(vet,N);
+    printfVet(vet,ARRAY_SIZE);
 
     system("pause");
     return 0;
 }
+

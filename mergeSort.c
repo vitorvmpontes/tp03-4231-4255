@@ -17,26 +17,32 @@ Referencia: SILVA, André Backes. Linguagem C: Completa e Descomplicada. São Pa
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define TAM_VETOR 10
+#include "randomArray.h"
+#define ARRAY_SIZE 10000
 void mergeSort(int *V , int inicio , int fim);
 void merge (int *V, int inicio, int meio, int fim);
 
+void printfVet(int *V  , int N){
+    int i;
+    for(i = 0; i < N; i++)
+        printf("%d: %d\n",i, V[i]);
+    printf("\n");
+}
+
+
 int main(){
 
-    int conjuntoDesordenado[TAM_VETOR] = {10,2,3,7,18,-2,49,22,12,1};
-    int i;
+    int vet[ARRAY_SIZE];
+    generateRandomValues(vet,ARRAY_SIZE);
 
     printf("Vetor desordenado:\n");
-    for ( i = 0; i < TAM_VETOR; i++){
-        printf("%d: %d\n",i,conjuntoDesordenado[i]);
-    }
-    printf("\n");
-    mergeSort(conjuntoDesordenado,0,TAM_VETOR);
+    printfVet(vet,ARRAY_SIZE);
+    
+    mergeSort(vet,0,ARRAY_SIZE);
 
     printf("Vetor ordenado:\n");
-    for ( i = 0; i < TAM_VETOR; i++){
-        printf("%d: %d\n",i,conjuntoDesordenado[i]);
-    }
+    printfVet(vet,ARRAY_SIZE);
+    
     
     return 0;
 }

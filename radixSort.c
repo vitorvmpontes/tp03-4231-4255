@@ -2,6 +2,8 @@
 //https://www.programiz.com/dsa/radix-sort
 
 #include <stdio.h>
+#include "randomArray.h"
+#define ARRAY_SIZE 10000
 
 // Function to get the largest element from an array
 int getMax(int array[], int n) {
@@ -64,13 +66,14 @@ void printArray(int array[], int size) {
 
 // Driver code
 int main() {
-  int array[] = {121, 432, 564, 23, 1, 45, 788};
-  int n = sizeof(array) / sizeof(array[0]);
+  int vet[ARRAY_SIZE];
+  generateRandomValues(vet,ARRAY_SIZE);
+
   printf("Vetor desordenado:\n");
-  printArray(array, n);
+  printArray(vet, ARRAY_SIZE);
   
-  radixsort(array, n);
+  radixsort(vet, ARRAY_SIZE);
 
   printf("Vetor ordenado:\n");
-  printArray(array, n);
+  printArray(vet, ARRAY_SIZE);
 }
